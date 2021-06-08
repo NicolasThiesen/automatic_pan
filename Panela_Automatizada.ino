@@ -25,7 +25,7 @@ double V_temp;
 
 
 double Setpoint, Input, Output;
-double Kp=10, Ki=0.02, Kd=0.001;
+double Kp=5, Ki=0.02, Kd=0.001;
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
 int rele_pwm = 10, chave_potencia = 8, chave_set=9, V_potencia, V_set;
@@ -45,7 +45,7 @@ void setup()
   pinMode(rele_pwm, OUTPUT); // Rele PWM
   pinMode(chave_potencia, INPUT); // Chave de Potencia
   pinMode(chave_set, INPUT); // Chave ?? 
-  pinMode(6, OUTPUT); // ???
+  pinMode(6, OUTPUT); // 
   pinMode(7, OUTPUT); // ???
   pinMode(10, INPUT); // ???
 
@@ -66,7 +66,8 @@ void setup()
 
   //turn the PID on
   myPID.SetMode(AUTOMATIC);
-  Serial.println("Temperatura_AC Potencia Output");
+  //Labels
+  Serial.println("Temperatura Potencia Output");
 }
 
 //================================================================================================================================================
